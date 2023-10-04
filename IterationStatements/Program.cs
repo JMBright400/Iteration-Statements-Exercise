@@ -27,7 +27,79 @@
         //Call the methods to test them in the Main method below
         static void Main(string[] args)
         {
-            
+            PrintNumbersFrom1000ToMinus1000();
+            PrintNumbersFrom3To999By3();
+            CheckIfEqual(5, 5);
+            CheckIfEvenOrOdd(7);
+            CheckIfPositiveOrNegative(-3);
+            CheckVotingEligibility();
+        }
+        static void PrintNumbersFrom1000ToMinus1000()
+        {
+            for (int i = 1000; i >= -1000; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        static void PrintNumbersFrom3To999By3()
+        {
+            for (int i = 3; i <= 999; i += 3)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        static void CheckIfEqual(int num1, int num2)
+        {
+            if (num1 == num2)
+            {
+                Console.WriteLine("The numbers are equal.");
+            }
+            else
+            {
+                Console.WriteLine("The numbers are NOT equal.");
+            }
+        }
+        static void CheckIfEvenOrOdd(int num)
+        {
+            if (num % 2 == 0)
+            {
+                Console.WriteLine($"{num} is even.");
+            }
+            else
+            {
+                Console.WriteLine($"{num} is odd.");
+            }
+        }
+        static void CheckIfPositiveOrNegative(int num)
+        {
+            if (num > 0)
+            {
+                Console.WriteLine($"{num} is positive.");
+            }
+            else if (num < 0)
+            {
+                Console.WriteLine($"{num} is negative.");
+            }
+            else
+            {
+                Console.WriteLine($"{num} is zero.");
+            }
+        }
+        static void CheckVotingEligibility()
+        {
+            Console.WriteLine("Enter your age: ");
+            if (int.TryParse(Console.ReadLine(), out int age))
+            {
+                if (age >= 18)
+                {
+                    Console.WriteLine("You are old enough to vote!");
+                }
+                else
+                {
+                    Console.WriteLine("You are NOT old enough to vote, sorry.");
+                }
+            }
         }
     }
+
 }
